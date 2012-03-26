@@ -12,3 +12,18 @@ Okay, straight out Pokemon G1 clone.
 *For now, concentrate on getting overworld functionality, no battles, etc.*
 - Dialogue (Timed appearance of letters, mimic scrolling)
 
+Resources
+- Maps
+- Sprite sheets
+  - Characters (walking, standing, etc.)
+  - Pokemon
+  - Items
+  - Tiles (Maps not images but matrix of IDs)
+  - Recurring textures (Pokemart, Pokecenter, houses?)
+
+How do we want to go about this?
+- Start with coding rather than creating content
+    - Map structures
+    - Player movement
+Do that first :3
+
