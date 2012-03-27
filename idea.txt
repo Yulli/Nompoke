@@ -27,3 +27,9 @@ How do we want to go about this?
     - Player movement
 Do that first :3
 
+
+More specific todo for today
+- Download "first map" - Pallet Town?
+- Analyse and record textures (get a start on the texture sheet)
+- Create map storing structure (worry about compression later)
+
