@@ -24,6 +24,7 @@ Resources
 How do we want to go about this?
 - Start with coding rather than creating content
     - Map structures
+        - Consider: can a Rect be larger than a given Surface?
     - Player movement
 Do that first :3
 
@@ -33,3 +34,4 @@ More specific todo for today
 - Analyse and record textures (get a start on the texture sheet)
 - Create map storing structure (worry about compression later)
 
+When considering display/graphics, keep different size options in mind.
