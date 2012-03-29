@@ -33,7 +33,7 @@ class Player(pygame.sprite.Sprite):
         self.vector = vector
 
 pygame.init()
-screen = pygame.display.set_mode((200, 200))
+screen = pygame.display.set_mode((700, 700))
 pygame.display.set_caption('Testing loading a tile')
 
 background = pygame.Surface(screen.get_size())
