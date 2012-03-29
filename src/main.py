@@ -9,7 +9,7 @@ from pygame.locals import *
 
 def load_png(name):
     """Load PNG image and return image object"""
-    resfolder = path.join(path.dirname(path.abspath(__file__), 'res') # the resource folder is in the parent directory of this file's directory
+    resfolder = path.join(path.dirname(path.abspath(__file__), 'res')) # the resource folder is in the parent directory of this file's directory
     fullname = path.join(resfolder, name) # and the actual file path
     try:
         image = pygame.image.load(fullname) # load the file
