@@ -1,22 +1,22 @@
 import sys
 import random
 import math
-import os
 #import getopt
 import pygame
+from os import path
 #from socket import *
 from pygame.locals import *
 
 def load_png(name):
     """Load PNG image and return image object"""
-    resfolder = os.path.join(os.path.dirname(os.getcwd()), 'res')
-    fullname = os.path.join(resfolder, name)
+    resfolder = path.join(path.dirname(path.abspath(__file__), 'res') # the resource folder is in the parent directory of this file's directory
+    fullname = path.join(resfolder, name) # and the actual file path
     try:
-        image = pygame.image.load(fullname)
-        if image.get_alpha() is None:
-            image = image.convert()
-        else:
-            image = image.convert_alpha()
+        image = pygame.image.load(fullname) # load the file
+        if image.get_alpha() is None:     # for a non-alpha PNG
+            image = image.convert()       # optimise the image
+        else:                             # but for an alpha PNG
+            image = image.convert_alpha() # use an alpha-specific optimise
     except pygame.error, message:
         print 'Cannot load image:', fullname
         raise SystemExit, message
