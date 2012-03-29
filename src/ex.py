@@ -28,7 +28,7 @@ def main():
 	while 1:
 		for event in pygame.event.get():
 			if event.type == QUIT:
-				return
+				sys.exit(1)
 
 		screen.blit(background, (0, 0))
 		pygame.display.flip()
