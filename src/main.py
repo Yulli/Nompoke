@@ -10,9 +10,7 @@ from pygame.locals import *
 def load_png(name):
     """Load PNG image and return image object"""
     resfolder = os.path.join(os.path.dirname(os.getcwd()), 'res')
-    print "resfolder is: " + resfolder
     fullname = os.path.join(resfolder, name)
-    print "fullname is: " + fullname
     try:
         image = pygame.image.load(fullname)
         if image.get_alpha() is None:
