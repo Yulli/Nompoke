@@ -7,6 +7,11 @@ from os import path
 #from socket import *
 from pygame.locals import *
 
+DEFAULT_SCALE = 2
+
+scale = DEFAULT_SCALE
+
+
 def load_png(name):
     """Load PNG image and return image object"""
     currentfolder = path.dirname(path.abspath(__file__))
