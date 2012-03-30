@@ -1,7 +1,6 @@
 import sys
 import random
 import math
-#import getopt
 import pygame
 from os import path
 #from socket import *
