@@ -53,9 +53,10 @@ background = pygame.Surface(screen.get_size())
 background = background.convert()
 background.fill((200, 200, 200))
 
-for x in xrange(0, 10):
-    image = load_png('grass1.png')
-    background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, 0))
+for y in xrange(0, 9):
+    for x in xrange(0, 10):
+        image = load_png('grass1.png')
+        background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
 screen.blit(background, (0,0))
 pygame.display.flip()
