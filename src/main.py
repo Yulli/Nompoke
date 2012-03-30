@@ -6,7 +6,7 @@ from os import path
 #from socket import *
 from pygame.locals import *
 
-from ..utils import load_png
+from utils.load_png import load_png
 
 DEFAULT_SCALE = 2
 TILE_SIZE = 16
