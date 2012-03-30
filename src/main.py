@@ -27,7 +27,7 @@ def load_png(name):
         print 'Cannot load image:', fullname
         raise SystemExit, message
     if scale = 2:                              # if the game scale is 2x
-        return pygame.transform.scale2x(image) # double the image
+        return pygame.transform.scale2x(image) # double the image size
     else:                                      # otherwise,
         scaledsize = (pygame.Surface.get_width(image) * scale, pygame.Surface.get_height(image) * scale) # just scale the image by game scale
         return image
