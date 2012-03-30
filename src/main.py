@@ -8,6 +8,7 @@ from os import path
 from pygame.locals import *
 
 DEFAULT_SCALE = 2
+TILE_SIZE = 16
 
 scale = DEFAULT_SCALE
 
