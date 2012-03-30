@@ -10,7 +10,6 @@ from pygame.locals import *
 DEFAULT_SCALE = 2
 
 scale = DEFAULT_SCALE
-scale = 10
 
 
 def load_png(name):
