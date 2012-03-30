@@ -25,6 +25,7 @@ How do we want to go about this?
 - Start with coding rather than creating content
     - Map structures
         - Consider: can a Rect be larger than a given Surface?
+        - No need: tiles will fill window perfectly
     - Player movement
         - The sprite extends up to 4 pixels ABOVE the tile it is standing on
 Do that first :3
