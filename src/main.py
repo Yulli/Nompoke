@@ -21,7 +21,11 @@ def load_png(name):
     except pygame.error, message:
         print 'Cannot load image:', fullname
         raise SystemExit, message
-    return image
+    if scale = 2:                              # if the game scale is 2x
+        return pygame.transform.scale2x(image) # double the image
+    else:                                      # otherwise,
+        scaledsize = (pygame.Surface.get_width(image) * scale, pygame.Surface.get_height(image) * scale) # just scale the image by game scale
+        return image
 
 class Player(pygame.sprite.Sprite):
     """The main character"""
