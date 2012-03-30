@@ -1,4 +1,6 @@
 from os import path
+import pygame
+from pygame.locals import *
 
 def load_png(name):
     """Load PNG image and return image object"""
