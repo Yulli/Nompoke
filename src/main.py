@@ -33,6 +33,12 @@ background.fill((200, 200, 200))
 for y in xrange(0, 9):
     for x in xrange(0, 10):
         image = load_png('grass1.png')
+        if scale == 2:
+            image = pygame.transform.scale2x(image)
+        else:
+            width = pygame.Surface.get_width(image)
+            height = pygame.Surface.get_width(image)
+            scaledsize = (width * scale, height * scale)
         background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
 screen.blit(background, (0,0))
