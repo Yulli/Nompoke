@@ -7,7 +7,7 @@ from pygame.locals import *
 
 from utils.load_png import load_png
 
-DEFAULT_SCALE = 2
+DEFAULT_SCALE = 4
 TILE_SIZE = 16
 
 scale = DEFAULT_SCALE
@@ -39,6 +39,7 @@ for y in xrange(0, 9):
             width = pygame.Surface.get_width(image)
             height = pygame.Surface.get_width(image)
             scaledsize = (width * scale, height * scale)
+            image = pygame.transform.scale(image, scaledsize)
         background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
 screen.blit(background, (0,0))
