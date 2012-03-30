@@ -46,7 +46,7 @@ class Player(pygame.sprite.Sprite):
 
 pygame.init()
 screen = pygame.display.set_mode((160 * scale, 144 * scale))
-pygame.display.set_caption('Testing loading a tile')
+pygame.display.set_caption('Nompoke')
 
 background = pygame.Surface(screen.get_size())
 background = background.convert()
