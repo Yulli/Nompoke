@@ -2,7 +2,6 @@ import sys
 import random
 import math
 import pygame
-from os import path
 #from socket import *
 from pygame.locals import *
 

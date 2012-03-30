@@ -1,3 +1,5 @@
+from os import path
+
 def load_png(name):
     """Load PNG image and return image object"""
     currentfolder = path.dirname(path.abspath(__file__))
