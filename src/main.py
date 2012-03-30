@@ -10,6 +10,7 @@ from pygame.locals import *
 DEFAULT_SCALE = 2
 
 scale = DEFAULT_SCALE
+scale = 10
 
 
 def load_png(name):
@@ -29,8 +30,10 @@ def load_png(name):
     if scale == 2:                              # if the game scale is 2x
         return pygame.transform.scale2x(image) # double the image size
     else:                                      # otherwise,
-        scaledsize = (pygame.Surface.get_width(image) * scale, pygame.Surface.get_height(image) * scale) # just scale the image by game scale
-        return image
+        width = pygame.Surface.get_width(image)
+        height = pygame.Surface.get_height(image)
+        scaledsize = (width * scale, height * scale) # just scale the image by game scale
+        return pygame.transform.scale(image, scaledsize)
 
 class Player(pygame.sprite.Sprite):
     """The main character"""
