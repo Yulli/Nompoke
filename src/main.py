@@ -12,13 +12,23 @@ TILE_SIZE = 16
 
 scale = DEFAULT_SCALE
 
+def nice_scale(surf):
+    if scale == 2:
+        return pygame.transform.scale2x(surf)
+    else:
+        width = pygame.Surface.get_width(surf)
+        height = pygame.Surface.get_height(surf)
+        scaledsize = (width * scale, height * scale)
+        return pygame.transform.scale(surf, scaledsize)
+
 class Player(pygame.sprite.Sprite):
     """The main character"""
 
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = load_png('player.png') #TODO: retain direction
-        self.rect = image.get_rect()
+        self.image = nice_scale(self.image)
+        self.rect = self.image.get_rect()
 
 pygame.init()
 screen = pygame.display.set_mode((160 * scale, 144 * scale))
@@ -31,13 +41,7 @@ background.fill((200, 200, 200))
 for y in xrange(0, 9):
     for x in xrange(0, 10):
         image = load_png('grass1.png')
-        if scale == 2:
-            image = pygame.transform.scale2x(image)
-        else:
-            width = pygame.Surface.get_width(image)
-            height = pygame.Surface.get_width(image)
-            scaledsize = (width * scale, height * scale)
-            image = pygame.transform.scale(image, scaledsize)
+        image = nice_scale(image)
         background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
 player = Player()
