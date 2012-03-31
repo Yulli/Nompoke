@@ -20,7 +20,6 @@ class Player(pygame.sprite.Sprite):
         self.image = load_png('player.png') #TODO: retain direction
         screen = pygame.display.get_surface()
         self.area = screen.get_rect()
-        self.vector = vector
 
 pygame.init()
 screen = pygame.display.set_mode((160 * scale, 144 * scale))
