@@ -15,7 +15,7 @@ scale = DEFAULT_SCALE
 class Player(pygame.sprite.Sprite):
     """The main character"""
 
-    def __init__(self, vector):
+    def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = load_png('player.png') #TODO: retain direction
         screen = pygame.display.get_surface()
