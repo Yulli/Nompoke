@@ -32,13 +32,13 @@ class Player(pygame.sprite.Sprite):
 
     def move(self, direction):
         if direction == 'up':
-            self.rect = self.rect.move(TILE_SIZE * scale, 0)
+            self.rect = self.rect.move(0, -1 * TILE_SIZE * scale)
         elif direction == 'left':
-            self.rect = self.rect.move(0, -1 * TILESIZE * scale)
-        elif direction == 'down':
             self.rect = self.rect.move(-1 * TILE_SIZE * scale, 0)
-        else: # direction = 'right'
+        elif direction == 'down':
             self.rect = self.rect.move(0, TILE_SIZE * scale)
+        else: # direction = 'right'
+            self.rect = self.rect.move(TILE_SIZE * scale, 0)
 
 
 pygame.init()
@@ -62,9 +62,18 @@ screen.blit(background, (0,0))
 pygame.display.flip()
 
 while 1:
-    for event in pygame.event.get():
-        if event.type == QUIT:
+    for e in pygame.event.get():
+        if e.type == QUIT:
             sys.exit(1)
+        elif e.type == KEYDOWN:
+            if e.key == K_w:
+                player.move('up')
+            elif e.key == K_a:
+                player.move('left')
+            elif e.key == K_s:
+                player.move('down')
+            elif e.key == K_d:
+                player.move('right')
 
     screen.blit(background, (0,0))
     screen.blit(background, player.rect, player.rect)
