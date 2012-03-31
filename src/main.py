@@ -17,7 +17,7 @@ class Player(pygame.sprite.Sprite):
 
     def __init__(self, vector):
         pygame.sprite.Sprite.__init__(self)
-        self.image, self.rect = load_png('') #TODO: retain direction
+        self.image = load_png('player.png') #TODO: retain direction
         screen = pygame.display.get_surface()
         self.area = screen.get_rect()
         self.vector = vector
