@@ -30,6 +30,17 @@ class Player(pygame.sprite.Sprite):
         self.image = nice_scale(self.image)
         self.rect = self.image.get_rect()
 
+    def move(self, direction):
+        if direction == 'up':
+            self.rect = self.rect.move(TILE_SIZE * scale, 0)
+        elif direction == 'left':
+            self.rect = self.rect.move(0, -1 * TILESIZE * scale)
+        elif direction == 'down':
+            self.rect = self.rect.move(-1 * TILE_SIZE * scale, 0)
+        else: # direction = 'right'
+            self.rect = self.rect.move(0, TILE_SIZE * scale)
+
+
 pygame.init()
 screen = pygame.display.set_mode((160 * scale, 144 * scale))
 pygame.display.set_caption('Nompoke')
