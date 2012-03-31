@@ -18,7 +18,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = load_png('player.png') #TODO: retain direction
-        screen = pygame.display.get_surface()
+        self.rect = image.get_rect()
 
 pygame.init()
 screen = pygame.display.set_mode((160 * scale, 144 * scale))
@@ -40,6 +40,9 @@ for y in xrange(0, 9):
             image = pygame.transform.scale(image, scaledsize)
         background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
+player = Player()
+csprites = pygame.sprite.RenderPlain(player)
+
 screen.blit(background, (0,0))
 pygame.display.flip()
 
@@ -49,6 +52,8 @@ while 1:
             sys.exit(1)
 
     screen.blit(background, (0,0))
+    screen.blit(background, player.rect, player.rect)
+    csprites.draw(screen)
     pygame.display.flip()
 
 
