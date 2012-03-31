@@ -29,6 +29,7 @@ class Player(pygame.sprite.Sprite):
         self.image = load_png('player.png') #TODO: retain direction
         self.image = nice_scale(self.image)
         self.rect = self.image.get_rect()
+        self.rect = self.rect.move(0, -4 * scale)
 
     def move(self, direction):
         if direction == 'up':
