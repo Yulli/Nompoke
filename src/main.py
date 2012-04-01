@@ -30,6 +30,11 @@ class Player(pygame.sprite.Sprite):
         self.image = nice_scale(self.image)
         self.rect = self.image.get_rect()
         self.rect = self.rect.move(0, -4 * scale)
+        self.movedir = ''
+
+    def update(self):
+        if self.movedir != '':
+            self.move(self.movedir)
 
     def move(self, direction):
         if direction == 'up':
@@ -68,18 +73,19 @@ while 1:
             sys.exit(1)
         elif e.type == KEYDOWN:
             if e.key == K_w:
-                player.move('up')
+                player.movedir = 'up'
             elif e.key == K_a:
-                player.move('left')
+                player.movedir = 'left'
             elif e.key == K_s:
-                player.move('down')
+                player.movedir = 'down'
             elif e.key == K_d:
-                player.move('right')
+                player.movedir = 'right'
+        elif e.type == KEYUP:
+            if e.key == K_w or e.key == K_a or e.key == K_s or e.key == K_d:
+                player.movedir = ''
 
     screen.blit(background, (0,0))
     screen.blit(background, player.rect, player.rect)
+    csprites.update()
     csprites.draw(screen)
     pygame.display.flip()
-
-
-
