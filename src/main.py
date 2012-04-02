@@ -26,7 +26,7 @@ class Player(pygame.sprite.Sprite):
 
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = load_png('player.png') #TODO: retain direction
+        self.image = load_png('playerdown.png') #TODO: retain direction
         self.image = nice_scale(self.image)
         self.rect = self.image.get_rect()
         self.rect = self.rect.move(0, -4 * scale)
