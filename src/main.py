@@ -53,7 +53,7 @@ pygame.display.set_caption('Nompoke')
 
 background = pygame.Surface(screen.get_size())
 background = background.convert()
-background.fill((200, 200, 200))
+background.fill((255, 255, 255))
 
 for y in xrange(0, 9):
     for x in xrange(0, 10):
