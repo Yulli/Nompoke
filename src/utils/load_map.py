@@ -3,13 +3,13 @@ from load_png import load_png
 import pygame
 from pygame.locals import *
 
-def load_map(name):
+def load_map(name, screen):
     """Load map and return image object"""
     currentfolder = path.dirname(path.abspath(__file__))
     mapfolder = path.join(path.dirname(path.dirname(currentfolder)), 'maps')
     fullname = path.join(mapfolder, name)
 
-    mapsurf = pygame.Surface
+    mapsurf = pygame.Surface(screen.get_size())
     mapfile = open(fullname, 'r')
     ycount = 0
     for row in mapfile:

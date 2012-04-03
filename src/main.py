@@ -62,10 +62,13 @@ background.fill((255, 255, 255))
 #        image = nice_scale(image)
 #        background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
+world = load_map('room', screen)
+
 player = Player()
 csprites = pygame.sprite.RenderPlain(player)
 
 screen.blit(background, (0,0))
+screen.blit(world, (0,0))
 pygame.display.flip()
 
 while 1:
@@ -87,6 +90,7 @@ while 1:
 
     screen.blit(background, (0,0))
     screen.blit(background, player.rect, player.rect)
+    screen.blit(world, (0,0))
     csprites.update()
     csprites.draw(screen)
     pygame.display.flip()
