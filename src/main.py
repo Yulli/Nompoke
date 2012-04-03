@@ -6,6 +6,7 @@ import pygame
 from pygame.locals import *
 
 from utils.load_png import load_png
+from utils.load_map import load_map
 
 DEFAULT_SCALE = 4
 TILE_SIZE = 16
@@ -55,11 +56,11 @@ background = pygame.Surface(screen.get_size())
 background = background.convert()
 background.fill((255, 255, 255))
 
-for y in xrange(0, 9):
-    for x in xrange(0, 10):
-        image = load_png('grass1.png')
-        image = nice_scale(image)
-        background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
+#for y in xrange(0, 9):
+#    for x in xrange(0, 10):
+#        image = load_png('grass1.png')
+#        image = nice_scale(image)
+#        background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
 player = Player()
 csprites = pygame.sprite.RenderPlain(player)
