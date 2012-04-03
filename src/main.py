@@ -63,6 +63,7 @@ background.fill((255, 255, 255))
 #        background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
 world = load_map('room', screen)
+world = nice_scale(world)
 
 player = Player()
 csprites = pygame.sprite.RenderPlain(player)
