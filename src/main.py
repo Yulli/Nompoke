@@ -1,6 +1,6 @@
 import sys
-import random
 import math
+import time
 import pygame
 #from socket import *
 from pygame.locals import *
