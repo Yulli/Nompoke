@@ -32,6 +32,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect = self.rect.move(0, -4 * scale)
         self.movedir = ''
+        self.lastmove = time.time()
 
     def update(self):
         if self.movedir != '':
