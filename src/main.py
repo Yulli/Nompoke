@@ -35,7 +35,7 @@ class Player(pygame.sprite.Sprite):
         self.lastmove = time.time()
 
     def update(self):
-        if self.movedir != '' and time.time() - self.lastmove >= 200:
+        if self.movedir != '' and time.time() - self.lastmove >= 0.2:
             self.move(self.movedir)
             self.lastmove = time.time()
         print time.time() - self.lastmove
