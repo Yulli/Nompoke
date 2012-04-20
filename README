@@ -25,3 +25,7 @@ How do we want to go about this?
     - Player movement
         - Smooth movement
             - 1 step = 12 frames = 0.2 sec
+            - Stepping
+                - Move 2 in new direction
+                - Turn, move 14
+                - Repeat
