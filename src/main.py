@@ -86,13 +86,13 @@ while 1:
             sys.exit(1)
         elif e.type == KEYDOWN:
             if e.key == K_w:
-                player.movedir = 'up'
+                player.movedirs.append('up')
             elif e.key == K_a:
-                player.movedir = 'left'
+                player.movedirs.append('left')
             elif e.key == K_s:
-                player.movedir = 'down'
+                player.movedirs.append('down')
             elif e.key == K_d:
-                player.movedir = 'right'
+                player.movedirs.append('right')
         elif e.type == KEYUP:
             if e.key == K_w or e.key == K_a or e.key == K_s or e.key == K_d:
                 player.movedir = ''
