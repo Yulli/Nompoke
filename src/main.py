@@ -94,8 +94,14 @@ while 1:
             elif e.key == K_d:
                 player.movedirs.append('right')
         elif e.type == KEYUP:
-            if e.key == K_w or e.key == K_a or e.key == K_s or e.key == K_d:
-                player.movedir = ''
+            if e.key == K_w:
+                player.movedirs.remove('up')
+            elif e.key == K_a:
+                player.movedirs.remove('left')
+            elif e.key == K_s:
+                player.movedirs.remove('down')
+            elif e.key == K_d:
+                player.movedirs.remove('right')
 
     screen.blit(background, (0,0))
     screen.blit(background, player.rect, player.rect)
