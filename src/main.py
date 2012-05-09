@@ -35,8 +35,14 @@ class Player(pygame.sprite.Sprite):
         self.lastmove = time.time()
 
     def update(self):
-        if self.movedir != '' and time.time() - self.lastmove >= 0.2:
-            self.move(self.movedir)
+        if self.movedirs.__len__() != 0 and \
+           time.time() - self.lastmove >= 0.2:
+            dir1, dir2 = self.movedirs[0], self.movedirs[1]
+            if dir1 == "left" or dir1 == "right":
+                if dir2 == "up" or dir2 == "down":
+                    self.move(dir2)
+            else:
+                self.move(dir1)
             self.lastmove = time.time()
 
     def move(self, direction):
