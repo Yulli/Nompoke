@@ -85,22 +85,22 @@ while 1:
             sys.exit(1)
         elif e.type == KEYDOWN:
             if e.key == K_w:
-                player.movedirs.append('up')
+                player.movedirsv.append('up')
             elif e.key == K_a:
-                player.movedirs.append('left')
+                player.movedirsh.append('left')
             elif e.key == K_s:
-                player.movedirs.append('down')
+                player.movedirsv.append('down')
             elif e.key == K_d:
-                player.movedirs.append('right')
+                player.movedirsh.append('right')
         elif e.type == KEYUP:
             if e.key == K_w:
-                player.movedirs.remove('up')
+                player.movedirsv.remove('up')
             elif e.key == K_a:
-                player.movedirs.remove('left')
+                player.movedirsh.remove('left')
             elif e.key == K_s:
-                player.movedirs.remove('down')
+                player.movedirsv.remove('down')
             elif e.key == K_d:
-                player.movedirs.remove('right')
+                player.movedirsh.remove('right')
 
     screen.blit(background, (0,0))
     screen.blit(background, player.rect, player.rect)
