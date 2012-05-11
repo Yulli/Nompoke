@@ -1,8 +1,8 @@
 import sys
 import random
 import math
+
 import pygame
-#from socket import *
 from pygame.locals import *
 
 from utils.load_png import load_png
