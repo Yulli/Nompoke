@@ -39,11 +39,9 @@ class Player(pygame.sprite.Sprite):
            self.movedirsv.__len__() != 0) and \
            time.time() - self.lastmove >= 0.2:
             if self.movedirsv.__len__() != 0:
-                if self.movedirsv.__len__() == 1:
-                    self.move(self.movedirsv[0])
+                self.move(self.movedirsv[0])
             elif self.movedirsh.__len__() != 0:
-                if self.movedirsh.__len__() == 1:
-                    self.move(self.movedirsh[0])
+                self.move(self.movedirsh[0])
             self.lastmove = time.time()
 
     def move(self, direction):
