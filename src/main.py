@@ -89,3 +89,4 @@ while 1:
     csprites.update()
     csprites.draw(screen)
     pygame.display.flip()
+    clock.tick(FPS)
