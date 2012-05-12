@@ -22,20 +22,10 @@ Resources
   - Recurring textures (Pokemart, Pokecenter, houses?)
 
 How do we want to go about this?
-- Start with coding rather than creating content
-    - Map structures
-        - Consider: can a Rect be larger than a given Surface?
-        - No need: tiles will fill window perfectly
     - Player movement
-        - The sprite extends up to 4 pixels ABOVE the tile it is standing on
-Do that first :3
-
-
-More specific todo for today
-- Download "first map" - Pallet Town?
-- Analyse and record textures (get a start on the texture sheet)
-- Create map storing structure (worry about compression later)
-
-When considering display/graphics, keep different size options in mind.
-Big problemo: how can you make the graphics visible? Simply loading them makes the tiles too small to see.
-FIX: USE pygame.transform
+        - Smooth movement
+            - 1 step = 12 frames = 0.2 sec
+            - Stepping
+                - Move 2 in new direction
+                - Turn, move 14
+                - Repeat

@@ -1,6 +1,6 @@
-import math
-import random
 import sys
+import math
+import time
 
 import pygame
 from pygame.locals import *
@@ -24,11 +24,19 @@ class Player(pygame.sprite.Sprite):
         self.image = nice_scale(scale, self.image)
         self.rect = self.image.get_rect()
         self.rect = self.rect.move(0, -4 * scale)
-        self.movedir = ''
+        self.movedirsh = []
+        self.movedirsv = []
+        self.lastmove = time.time()
 
     def update(self):
-        if self.movedir != '':
-            self.move(self.movedir)
+        if (self.movedirsh.__len__() != 0 or \
+           self.movedirsv.__len__() != 0) and \
+           time.time() - self.lastmove >= 0.2:
+            if self.movedirsv.__len__() != 0:
+                self.move(self.movedirsv[0])
+            elif self.movedirsh.__len__() != 0:
+                self.move(self.movedirsh[0])
+            self.lastmove = time.time()
 
     def move(self, direction):
         if direction == 'up':
@@ -72,16 +80,22 @@ while 1:
             sys.exit(1)
         elif e.type == KEYDOWN:
             if e.key == K_w:
-                player.movedir = 'up'
+                player.movedirsv.append('up')
             elif e.key == K_a:
-                player.movedir = 'left'
+                player.movedirsh.append('left')
             elif e.key == K_s:
-                player.movedir = 'down'
+                player.movedirsv.append('down')
             elif e.key == K_d:
-                player.movedir = 'right'
+                player.movedirsh.append('right')
         elif e.type == KEYUP:
-            if e.key == K_w or e.key == K_a or e.key == K_s or e.key == K_d:
-                player.movedir = ''
+            if e.key == K_w:
+                player.movedirsv.remove('up')
+            elif e.key == K_a:
+                player.movedirsh.remove('left')
+            elif e.key == K_s:
+                player.movedirsv.remove('down')
+            elif e.key == K_d:
+                player.movedirsh.remove('right')
 
     screen.blit(background, (0,0))
     screen.blit(background, player.rect, player.rect)
