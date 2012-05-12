@@ -11,6 +11,7 @@ from utils.nice_scale import nice_scale
 
 DEFAULT_SCALE = 4
 TILE_SIZE = 16
+FPS = 60
 
 scale = DEFAULT_SCALE
 
