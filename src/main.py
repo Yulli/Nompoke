@@ -42,6 +42,7 @@ class Player(pygame.sprite.Sprite):
 
 
 pygame.init()
+clock = pygame.time.Clock()
 screen = pygame.display.set_mode((160 * scale, 144 * scale))
 pygame.display.set_caption('Nompoke')
 
