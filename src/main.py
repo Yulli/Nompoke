@@ -7,20 +7,12 @@ from pygame.locals import *
 
 from utils.load_png import load_png
 from utils.load_map import load_map
+from utils.nice_scale import nice_scale
 
 DEFAULT_SCALE = 4
 TILE_SIZE = 16
 
 scale = DEFAULT_SCALE
-
-def nice_scale(surf):
-    if scale == 2:
-        return pygame.transform.scale2x(surf)
-    else:
-        width = pygame.Surface.get_width(surf)
-        height = pygame.Surface.get_height(surf)
-        scaledsize = (width * scale, height * scale)
-        return pygame.transform.scale(surf, scaledsize)
 
 class Player(pygame.sprite.Sprite):
     """The main character"""
