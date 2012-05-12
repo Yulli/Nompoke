@@ -20,7 +20,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = load_png('playerdown.png') #TODO: retain direction
-        self.image = nice_scale(self.image)
+        self.image = nice_scale(scale, self.image)
         self.rect = self.image.get_rect()
         self.rect = self.rect.move(0, -4 * scale)
         self.movedir = ''
@@ -55,7 +55,7 @@ background.fill((255, 255, 255))
 #        background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
 world = load_map('room', screen)
-world = nice_scale(world)
+world = nice_scale(scale, world)
 
 player = Player()
 csprites = pygame.sprite.RenderPlain(player)
