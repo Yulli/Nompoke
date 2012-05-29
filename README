@@ -23,3 +23,11 @@ How do we want to go about this?
                 - Move 2 in new direction
                 - Turn, move 14
                 - Repeat
+
+Maps and the World
+    - The "world" surface will contain all the maps for the world, each loaded on demand
+    - Loaded maps will be subsurfaces
+    - Track player's position on the world as a set of coords
+    - And keep a list of boundaries for each map
+    - As player's position approaches the boundary, load the adjacent map
+    - When crossing over into a new map, change music
