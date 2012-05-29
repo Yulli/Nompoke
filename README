@@ -1,13 +1,7 @@
 Pokemon-like structure
-- Limited number of tiles on a map
 - Seamless transition between maps (towns/"routes")
-
-
-Okay, straight out Pokemon G1 clone.
-
 - Towns are "maps" connected together (so are routes)
 - Sprites are entities moving in the world
-- Maps are tile-based - relatively limited number of positions
 
 *For now, concentrate on getting overworld functionality, no battles, etc.*
 - Dialogue (Timed appearance of letters, mimic scrolling)
