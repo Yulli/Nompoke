@@ -5,8 +5,9 @@ import time
 import pygame
 from pygame.locals import *
 
-from utils.load_png import load_png
 from utils.load_map import load_map
+from utils.load_png import load_png
+from utils.load_snd import load_snd
 from utils.nice_scale import nice_scale
 
 DEFAULT_SCALE = 4
