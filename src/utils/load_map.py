@@ -17,7 +17,7 @@ def load_map(name, screen):
         row = row[0:-1]
         tiles = row.split(' ')
         for tile in tiles:
-            tileimg = load_png(tile.__add__('.png'))
+            tileimg = load_png(tile)
             mapsurf.blit(tileimg, (16 * xcount, 16 * ycount))
             xcount += 1
         ycount += 1

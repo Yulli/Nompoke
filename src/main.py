@@ -20,7 +20,7 @@ class Player(pygame.sprite.Sprite):
 
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = load_png('playerdown.png') #TODO: retain direction
+        self.image = load_png('playerdown') #TODO: retain direction
         self.image = nice_scale(scale, self.image)
         self.rect = self.image.get_rect()
         self.rect = self.rect.move(0, -4 * scale)
@@ -60,7 +60,7 @@ background.fill((255, 255, 255))
 
 #for y in xrange(0, 9):
 #    for x in xrange(0, 10):
-#        image = load_png('grass1.png')
+#        image = load_png('grass1')
 #        image = nice_scale(image)
 #        background.blit(image, image.get_rect().move(TILE_SIZE * scale * x, TILE_SIZE * scale * y))
 
