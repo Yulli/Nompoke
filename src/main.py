@@ -68,7 +68,7 @@ background.fill((255, 255, 255))
 
 world = load_map('room', screen)
 world = nice_scale(scale, world)
-bgmusic = load_snd('pallet.ogg')
+pygame.mixer.music.load(get_mus('pallet'))
 
 player = Player()
 csprites = pygame.sprite.RenderPlain(player)
@@ -76,7 +76,7 @@ csprites = pygame.sprite.RenderPlain(player)
 screen.blit(background, (0,0))
 screen.blit(world, (0,0))
 pygame.display.flip()
-bgmusic.play(-1) # play bgmusic forever
+pygame.mixer.music.play(-1) # play music forever
 
 while 1:
     for e in pygame.event.get():
