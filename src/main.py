@@ -5,6 +5,7 @@ import time
 import pygame
 from pygame.locals import *
 
+from utils.get_mus import get_mus
 from utils.load_map import load_map
 from utils.load_png import load_png
 from utils.load_snd import load_snd
