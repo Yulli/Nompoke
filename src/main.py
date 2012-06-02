@@ -1,12 +1,14 @@
-import sys
 import math
+import sys
 import time
 
 import pygame
 from pygame.locals import *
 
-from utils.load_png import load_png
+from utils.get_mus import get_mus
 from utils.load_map import load_map
+from utils.load_png import load_png
+from utils.load_snd import load_snd
 from utils.nice_scale import nice_scale
 
 DEFAULT_SCALE = 4
@@ -66,6 +68,7 @@ background.fill((255, 255, 255))
 
 world = load_map('room', screen)
 world = nice_scale(scale, world)
+pygame.mixer.music.load(get_mus('pallet'))
 
 player = Player()
 csprites = pygame.sprite.RenderPlain(player)
@@ -73,6 +76,7 @@ csprites = pygame.sprite.RenderPlain(player)
 screen.blit(background, (0,0))
 screen.blit(world, (0,0))
 pygame.display.flip()
+pygame.mixer.music.play(-1) # play music forever
 
 while 1:
     for e in pygame.event.get():
