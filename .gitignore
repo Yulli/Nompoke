@@ -35,3 +35,6 @@ nbproject/private
 .DS_Store
 .pydevproject
 .rvmrc
+
+# Nompoke
+*.ogg
